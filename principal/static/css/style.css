@@ -1,0 +1,38 @@
+/*C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\static\css\style.css*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B6B6B6; /* Define a cor de fundo como preto */
+    color: white; /* Define a cor do texto como branco (ou outra cor que preferir) */
+}
+
+.header {
+    text-align: right;
+    padding: 10px;
+}
+
+.config-button {
+    /* Estilos para o botão de configuração */
+}
+
+.search-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.favorites textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.footer-buttons button {
+    width: 33%;
+    padding: 10px;
+}
+
+.btn-icon-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

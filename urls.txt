@@ -1,0 +1,28 @@
+C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\.venv
+C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink\__init__.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink\asgi.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink\settings.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink\urls.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\buslink\wsgi.py
+C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\migrations
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\static
+        C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\static\css
+            C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\static\css\style.css
+
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates
+        C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\configuracoes.html
+        C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\home.html
+
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\__init__.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\admin.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\apps.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\models.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\tests.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\urls.py
+    C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\views.py
+
+C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\db.sqlite3
+C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\manage.py
+

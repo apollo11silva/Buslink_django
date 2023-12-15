@@ -1,0 +1,41 @@
+<!-- C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\home.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - BusLink</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+
+         <a href="{% url 'redirecionar_para_configuracoes' %}">
+            <img src="{% static 'icones/config_avanc.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
+        </a>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Local de Partida">
+        <input type="text" placeholder="Destino">
+    </div>
+    <div class="favorites">
+        <textarea placeholder="Destinos Favoritos"></textarea>
+        <textarea placeholder="Linhas Utilizadas"></textarea>
+        <textarea placeholder="Paradas Solicitadas"></textarea>
+    </div>
+    <div class="footer-buttons d-flex justify-content-between">
+        <button class="btn btn-success">Destino</button>
+        <button class="btn btn-warning">Paradas</button>
+        <button class="btn btn-info">Linhas</button>
+    </div>
+</div>
+
+<!-- Opção de incluir o JavaScript do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

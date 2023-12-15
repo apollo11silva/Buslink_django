@@ -1,0 +1,70 @@
+<!-- C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\configuracoes.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações - BusLink</title>
+    <!-- Inclusão do CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <style>
+        /* Adicione um estilo personalizado para definir a cor dos botões */
+        .custom-btn {
+            background-color: #B6B6B6;
+            color: #fff; /* Cor do texto é branca */
+        }
+
+        /* Adicione um estilo personalizado para os botões de volta e ícone */
+        .btn-back {
+            background-color: transparent; /* Botão de volta transparente */
+        }
+        .btn-icon {
+            width: 35px;
+            height: 30px;
+        }
+    </style>
+    <div class="container mt-3">
+        <!-- Adicione a imagem no topo da tela como um link -->
+        <a href="{% url 'home' %}" class="btn-back">
+            <img src="{% static 'icones/btn_voltar.png' %}" alt="Voltar" class="btn-icon">
+        </a>
+        <div class="container mt-4"></div>
+
+        <!-- Use a classe "custom-btn" para definir a cor dos botões e "mb-2" para adicionar margem inferior -->
+        <div class="btn-group-vertical btn-block" role="group" aria-label="Configurações">
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+                <img src="{% static 'icones/mapa.png' %}" alt="Mapas Off-line" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                Mapas Off-line
+            </button>
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+                <img src="{% static 'icones/alerta.png' %}" alt="Alertas" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                Alertas
+            </button>
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+                <img src="{% static 'icones/config.png' %}" alt="Config Avançadas" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                Configurações Avançadas
+            </button>
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+                <img src="{% static 'icones/ajuda_suporte.png' %}" alt="Ajuda e Suporte" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                Ajuda e Suporte
+            </button>
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+                <img src="{% static 'icones/agendar_parada.png' %}" alt="Agendar Parada" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                Agendar Parada
+            </button>
+            <button class="btn custom-btn mb-2 btn-icon-left" type="button">
+
+                Sobre Nós
+            </button>
+        </div>
+    </div>
+
+    <!-- Opção de incluir o JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
