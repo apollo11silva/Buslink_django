@@ -12,23 +12,56 @@
 <div class="container">
 
     <div class="header">
-
          <a href="{% url 'redirecionar_para_configuracoes' %}">
             <img src="{% static 'icones/config_avanc.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
         </a>
     </div>
+
     <div class="search-box">
         <input type="text" placeholder="Local de Partida">
         <input type="text" placeholder="Destino">
     </div>
-    <div class="favorites">
-        <textarea placeholder="Destinos Favoritos"></textarea>
-        <textarea placeholder="Linhas Utilizadas"></textarea>
-        <textarea placeholder="Paradas Solicitadas"></textarea>
+
+ {# Telas para favoritos #}   
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
+                <p class="card-text" style="font-size: 18px; color: #333;">
+                    <strong>Favoritos</strong><br>
+                </p>
+            </div>
+        </div>
     </div>
+    
+       
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
+                <p class="card-text" style="font-size: 18px; color: #333;">
+                    <strong>Favoritos</strong><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
+                <p class="card-text" style="font-size: 18px; color: #333;">
+                    <strong>Favoritos</strong><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
     <div class="footer-buttons d-flex justify-content-between">
         <button class="btn btn-success">Destino</button>
-        <button class="btn btn-warning">Paradas</button>
+        <button class="btn btn-warning" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
         <button class="btn btn-info">Linhas</button>
     </div>
 </div>

@@ -1,0 +1,21 @@
+<!-- C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\paradas.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradas - BusLink</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'caminho/para/imagem/mapa.png' %}" alt="Mapa de Paradas">
+        <h2>Paradas Cadastradas:</h2>
+        <ul>
+            {% for parada in paradas %}
+                <li>{{ parada.nome }} - {{ parada.localizacao }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
