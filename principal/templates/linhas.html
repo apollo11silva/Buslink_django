@@ -1,42 +1,14 @@
+<!-- C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\linhas.html -->
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Paradas - BusLink</title>
+    <title>Linhas - BusLink</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+    
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            text-align: center;
-            padding-bottom: 70px;
-        }
-
-        h2 {
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Estilo para a imagem */
-        .map-image {
-            max-width: 100%;
-            height: auto;
-        }
-
         .footer-buttons {
             position: fixed;
             left: 0;
@@ -51,33 +23,49 @@
             margin-right: 10px;
         }
 
-        /* Estilo para o ícone de ônibus */
         .bus-icon {
-            width: 65px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             margin-right: 10px;
             vertical-align: middle;
+        }
+
+        /* Estilo para a caixa de pesquisa */
+        .search-box {
+            margin-top: 20px; /* Adicione margem superior para separar da seção anterior */
+            text-align: center; /* Centralize o conteúdo horizontalmente */
+        }
+
+        .search-box input[type="text"] {
+            width: 80%; /* Defina a largura da caixa de pesquisa */
+            padding: 10px; /* Adicione preenchimento interno para melhor aparência */
+            border: 1px solid #ccc; /* Adicione uma borda à caixa de pesquisa */
+            border-radius: 5px; /* Adicione bordas arredondadas */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="{% static 'icones\imagem_mapa.jpg' %}" alt="Mapa de Paradas" class="map-image">
-        <h4>Ao redor</h4>
+        <div class="search-box">
+            <input type="text" placeholder="Pesquise uma linha">
+        </div>
     </div>
+
+    <!-- Adicione a caixa de pesquisa aqui -->
     
+
     <ul>
-        {% for parada in paradas %}
-            <li><img src="{% static 'icones\icone_bus.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ parada.nome }} - {{ parada.localizacao }}</li>
+        {% for linha in linhas %}
+            <li><img src="{% static 'icones\onibus_branco.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ linha.numero }} - {{ linha.nome }}</li>
         {% endfor %}
     </ul>
 
     <div class="footer-buttons d-flex justify-content-between">
-        
         <button class="btn btn-info" onclick="window.location.href='{% url 'home' %}'">Destino</button>
         <button class="btn btn-info" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
         <button class="btn btn-info" onclick="window.location.href='{% url 'linhas' %}'">Linhas</button>
     </div>
-
 </body>
 </html>
+
+

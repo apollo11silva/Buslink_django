@@ -16,7 +16,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: #18191B;
+            background-color: #252A2F;
             border-top: none; /* Remova a borda superior */
             padding: 10px;
         }
@@ -32,7 +32,7 @@
 
     <div class="header">
          <a href="{% url 'redirecionar_para_configuracoes' %}">
-            <img src="{% static 'icones/config_avanc.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
+            <img src="{% static 'icones/configi.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
         </a>
     </div>
 
@@ -73,7 +73,7 @@
     <div class="footer-buttons d-flex justify-content-between">
         <button class="btn btn-info">Destino</button>
         <button class="btn btn-info" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
-        <button class="btn btn-info">Linhas</button>
+        <button class="btn btn-info" onclick="window.location.href='{% url 'linhas' %}'">Linhas</button>
     </div>
 </div>
 

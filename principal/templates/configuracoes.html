@@ -25,18 +25,33 @@
             width: 35px;
             height: 30px;
         }
+
+        .btn {
+            margin-bottom: 5px; /* Ajuste o espaçamento inferior conforme necessário */
+            background: none; /* Remove o fundo */
+        }
+    
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Ajusta a largura para 100% da tela */
+        }
+    
+        .btn:not(:last-child) {
+            border-bottom: 1px solid black;
+        }
     </style>
     <div class="container mt-3">
         <!-- Adicione a imagem no topo da tela como um link -->
         <a href="{% url 'home' %}" class="btn-back">
-            <img src="{% static 'icones/btn_voltar.png' %}" alt="Voltar" class="btn-icon">
+            <img src="{% static 'icones/voltar.png' %}" alt="Voltar" class="btn-icon">
         </a>
         <div class="container mt-4"></div>
 
         <!-- Use a classe "custom-btn" para definir a cor dos botões e "mb-2" para adicionar margem inferior -->
         <div class="btn-group-vertical btn-block" role="group" aria-label="Configurações">
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">
-                <img src="{% static 'icones/mapa.png' %}" alt="Mapas Off-line" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                <img src="{% static 'icones/mapa1.png' %}" alt="Mapas Off-line" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
                 Mapas Off-line
             </button>
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">
@@ -44,15 +59,15 @@
                 Alertas
             </button>
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">
-                <img src="{% static 'icones/config.png' %}" alt="Config Avançadas" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                <img src="{% static 'icones/avancada.png' %}" alt="Config Avançadas" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
                 Configurações Avançadas
             </button>
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">
-                <img src="{% static 'icones/ajuda_suporte.png' %}" alt="Ajuda e Suporte" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                <img src="{% static 'icones/suporte.png' %}" alt="Ajuda e Suporte" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
                 Ajuda e Suporte
             </button>
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">
-                <img src="{% static 'icones/agendar_parada.png' %}" alt="Agendar Parada" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
+                <img src="{% static 'icones/agenda.png' %}" alt="Agendar Parada" class="btn-icon" style="width: 30px; height: 30px; margin-right: 10px;">
                 Agendar Parada
             </button>
             <button class="btn custom-btn mb-2 btn-icon-left" type="button">

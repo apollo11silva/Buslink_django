@@ -7,4 +7,5 @@ urlpatterns = [
     path('configuracoes/', views.configuracoes, name='configuracoes'),
     path('redirecionar_para_configuracoes/', views.redirecionar_para_configuracoes, name='redirecionar_para_configuracoes'),
     path('paradas/', views.paradas, name='paradas'),
+    path('linhas/', views.linhas, name='linhas'),
 ]
