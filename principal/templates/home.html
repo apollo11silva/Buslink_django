@@ -7,6 +7,25 @@
     <title>Home - BusLink</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <style>
+       
+    
+        .footer-buttons {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #18191B;
+            border-top: none; /* Remova a borda superior */
+            padding: 10px;
+        }
+
+        .footer-buttons button {
+            margin-right: 10px; /* Espaçamento entre os botões. */
+        }
+    </style>
+
 </head>
 <body>
 <div class="container">
@@ -22,7 +41,10 @@
         <input type="text" placeholder="Destino">
     </div>
 
+
+
  {# Telas para favoritos #}   
+
 
     <div class="card mb-3">
         <div class="card-body">
@@ -39,20 +61,9 @@
     <div class="card mb-3">
         <div class="card-body">
             <div class="d-flex align-items-center">
-                <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
+                
                 <p class="card-text" style="font-size: 18px; color: #333;">
-                    <strong>Favoritos</strong><br>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="card mb-3">
-        <div class="card-body">
-            <div class="d-flex align-items-center">
-                <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
-                <p class="card-text" style="font-size: 18px; color: #333;">
-                    <strong>Favoritos</strong><br>
+                    <strong>Paradas Solicitadas</strong><br>
                 </p>
             </div>
         </div>
@@ -60,8 +71,8 @@
     
 
     <div class="footer-buttons d-flex justify-content-between">
-        <button class="btn btn-success">Destino</button>
-        <button class="btn btn-warning" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
+        <button class="btn btn-info">Destino</button>
+        <button class="btn btn-info" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
         <button class="btn btn-info">Linhas</button>
     </div>
 </div>

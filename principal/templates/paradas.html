@@ -1,21 +1,83 @@
-<!-- C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\paradas.html -->
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <title>Paradas - BusLink</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding-bottom: 70px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para a imagem */
+        .map-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer-buttons {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #18191B;
+            border-top: none;
+            padding: 10px;
+        }
+
+        .footer-buttons button {
+            margin-right: 10px;
+        }
+
+        /* Estilo para o ícone de ônibus */
+        .bus-icon {
+            width: 65px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="{% static 'caminho/para/imagem/mapa.png' %}" alt="Mapa de Paradas">
-        <h2>Paradas Cadastradas:</h2>
-        <ul>
-            {% for parada in paradas %}
-                <li>{{ parada.nome }} - {{ parada.localizacao }}</li>
-            {% endfor %}
-        </ul>
+        <img src="{% static 'icones\imagem_mapa.jpg' %}" alt="Mapa de Paradas" class="map-image">
+        <h4>Ao redor</h4>
     </div>
+    
+    <ul>
+        {% for parada in paradas %}
+            <li><img src="{% static 'icones\icone_bus.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ parada.nome }} - {{ parada.localizacao }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="footer-buttons d-flex justify-content-between">
+        
+        <button class="btn btn-info" onclick="window.location.href='{% url 'home' %}'">Destino</button>
+        <button class="btn btn-info" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>
+        <button class="btn btn-info">Linhas</button>
+    </div>
+
 </body>
 </html>
