@@ -9,67 +9,97 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
     <style>
-       
-    
+        /* Defina a imagem de fundo */
+        body {
+            background-image: url('{% static 'icones\imagem_jk.jpg' %}');
+            background-size: cover; /* Ajuste o tamanho da imagem para cobrir todo o corpo */
+            background-repeat: no-repeat; /* Evite a repetição da imagem */
+        }
+
+        .container {
+            position: relative; /* Adicione uma posição relativa para que a imagem de fundo não afete todo o conteúdo */
+        }
+
+        .header {
+            /* Estilos para o cabeçalho... */
+        }
+
+        .search-box {
+            background-color: rgba(66, 72, 79, 0.5); /* Cor de fundo da caixa de pesquisa com transparência */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Estilos para as outras seções... */
+
         .footer-buttons {
             position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
             background-color: #252A2F;
-            border-top: none; /* Remova a borda superior */
+            border-top: none;
             padding: 10px;
         }
 
         .footer-buttons button {
-            margin-right: 10px; /* Espaçamento entre os botões. */
+            margin-right: 10px;
+        }
+        .bus-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
     </style>
 
 </head>
 <body>
-<div class="container">
-
-    <div class="header">
-         <a href="{% url 'redirecionar_para_configuracoes' %}">
-            <img src="{% static 'icones/configi.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
-        </a>
-    </div>
-
-    <div class="search-box">
-        <input type="text" placeholder="Local de Partida">
-        <input type="text" placeholder="Destino">
-    </div>
-
-
+    <div class="container">
+        <div class="header">
+             <a href="{% url 'redirecionar_para_configuracoes' %}">
+                <img src="{% static 'icones/configi.png' %}" alt="Configurações" style="width: 25px; height: 25px;">
+            </a>
+        </div>
+    
+        <form action="{% url 'resultado_pesquisa' %}" method="post">
+            {% csrf_token %}
+            <div class="search-box">
+                <input type="text" name="local_partida" placeholder="Local de Partida" required>
+                <input type="text" name="destino" placeholder="Destino" required>
+                
+            </div>
 
  {# Telas para favoritos #}   
-
 
     <div class="card mb-3">
         <div class="card-body">
             <div class="d-flex align-items-center">
                 <img src="{% static 'icones/favoritos_icon.png' %}" alt="Ícone Favoritos" class="btn-icon" style="width: 20px; height: 20px; margin-right: 10px; margin-top: -8px;">
-                <p class="card-text" style="font-size: 18px; color: #333;">
-                    <strong>Favoritos</strong><br>
-                </p>
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>Favoritos</strong><br>                  
+                </p>               
             </div>
+            <hr style="border-color: black;"> 
+            <ul>
+                {% for favorito in favoritos %}
+                    <li><img src="{% static 'icones\icone_bus.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ favorito.nome }} </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
-    
-       
+          
     <div class="card mb-3">
         <div class="card-body">
             <div class="d-flex align-items-center">
                 
-                <p class="card-text" style="font-size: 18px; color: #333;">
+                <p class="card-text" style="font-size: 18px; color: white;">
                     <strong>Paradas Solicitadas</strong><br>
                 </p>
             </div>
         </div>
     </div>
     
-
     <div class="footer-buttons d-flex justify-content-between">
         <button class="btn btn-info">Destino</button>
         <button class="btn btn-info" onclick="window.location.href='{% url 'paradas' %}'">Paradas</button>

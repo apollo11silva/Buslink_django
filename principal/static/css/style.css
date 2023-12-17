@@ -14,13 +14,19 @@ body {
     /* Estilos para o botão de configuração */
 }
 
-.search-box input[type="text"] {
-    width: 100%;
-    padding: 10px;
+.search-box input {
+    background-color: #252A2F;
+    color: white; /* Define a cor do texto para branco, para melhor contraste. */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Adicione um arredondamento aos cantos */
+    padding: 10px; /* Adicione algum espaço interno para melhor aparência */
     margin: 5px 0;
+    width: 100%;
 }
 
+
 .favorites textarea {
+    
     width: 100%;
     margin: 5px 0;
     padding: 10px;
@@ -35,4 +41,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.card {
+
+    background-color: #252A2F; 
 }
