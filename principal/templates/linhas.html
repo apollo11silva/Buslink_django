@@ -23,6 +23,20 @@
             margin-right: 10px;
         }
 
+        ul {
+            list-style-type: none; /* Remove os marcadores de lista padrão */
+            padding: 0; /* Remova o preenchimento interno da lista */
+            margin-left: 30px;
+        }
+        
+        /* Estilo para os itens da lista */
+        ul li {
+            margin-bottom: 10px; /* Adicione margem inferior para separar os itens da lista */
+            display: flex; /* Use flexbox para alinhar os ícones e o texto verticalmente */
+            align-items: center; /* Centralize verticalmente os ícones e o texto */
+            font-size: 18px; /* Defina o tamanho da fonte desejado */
+        }
+
         .bus-icon {
             width: 20px;
             height: 20px;
@@ -45,7 +59,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container mb-4">
         <div class="search-box">
             <input type="text" placeholder="Pesquise uma linha">
         </div>

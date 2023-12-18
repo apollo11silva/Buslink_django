@@ -1,16 +1,163 @@
-<!--C:\Users\gau_m\OneDrive\Documentos\projetos_python\buslink_django\principal\templates\resultado_pesquisa.html-->
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <title>Resultado da Pesquisa - BusLink</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <style>
+        .btn-icon {
+            width: 35px;
+            height: 30px;
+        }
+
+        .config-icon {
+            margin-left: auto; /* Move o ícone de configurações para o canto superior direito */
+            width: 25px;
+            height: 30px;
+        }
+
+        .search-box {
+            background-color: rgba(66, 72, 79, 0.5); /* Cor de fundo da caixa de pesquisa com transparência */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .card-body {
+            background-color: rgba(66, 72, 79, 0.5); /* Cor de fundo da caixa de pesquisa com transparência */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .spacer {
+            margin-right: 30px; /* Adicione margem direita para criar espaço entre os valores */
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .status {
+            font-size: 18px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Resultado da Pesquisa</h1>
-        <p>Local de Partida: {{ local_partida }}</p>
-        <p>Destino: {{ destino }}</p>
-        <!-- Adicione mais conteúdo conforme necessário -->
+        <div class="d-flex justify-content-center mb-3">
+            <a href="{% url 'home' %}" class="btn-back">
+                <img src="{% static 'icones/voltar.png' %}" alt="Voltar" class="btn-icon">
+            </a>
+            <img src="{% static 'icones/configi.png' %}" alt="Configurações" class="config-icon">
+        </div>
+
+        <div class="search-box">
+            <input type="text" name="local_partida" placeholder="{{ local_partida }}" required>
+            <input type="text" name="local_partida" placeholder="{{ destino }}" required>           
+        </div>
     </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-3">
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>391.3-Samambaia Norte</strong>
+                </p>
+
+                <div class="spacer"></div> <!-- Espaço aqui -->
+                
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>200m 1min...</strong>
+                </p>
+            </div>
+
+            <div class="button-container">
+                <button id="solicitarButton1" class="btn btn-success" onclick="solicitar(1)">Solicitar</button>
+                <p class="status" id="statusText1"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-3">
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>0.391-Samambaia Norte</strong>
+                </p>
+
+                <div class="spacer"></div> <!-- Espaço aqui -->
+                
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>1,4km 7min</strong>
+                </p>
+            </div>
+
+            <div class="button-container">
+                <button id="solicitarButton2" class="btn btn-success" onclick="solicitar(2)">Solicitar</button>
+                <p class="status" id="statusText2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-3">
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>0.373-Samambaia Norte</strong>
+                </p>
+
+                <div class="spacer"></div> <!-- Espaço aqui -->
+                
+                <p class="card-text" style="font-size: 18px; color: white;">
+                    <strong>3km 15min</strong>
+                </p>
+            </div>
+
+            <div class="button-container">
+                <button id="solicitarButton3" class="btn btn-success" onclick="solicitar(3)">Solicitar</button>
+                <p class="status" id="statusText3"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var solicitados = [false, false, false];
+
+        function solicitar(id) {
+            for (var i = 0; i < solicitados.length; i++) {
+                if (i + 1 !== id && solicitados[i]) {
+                    // Desativar outros botões se estiverem ativados
+                    var statusText = document.getElementById('statusText' + (i + 1));
+                    var solicitarButton = document.getElementById('solicitarButton' + (i + 1));
+                    statusText.textContent = '';
+                    solicitarButton.textContent = 'Solicitar';
+                    solicitarButton.classList.remove('btn-danger');
+                    solicitarButton.classList.add('btn-success');
+                    solicitados[i] = false;
+                }
+            }
+
+            var statusText = document.getElementById('statusText' + id);
+            var solicitarButton = document.getElementById('solicitarButton' + id);
+
+            if (!solicitados[id - 1]) {
+                statusText.textContent = 'Solicitado';
+                statusText.style.color = 'green';
+                solicitarButton.textContent = 'Cancelar Solicitação';
+                solicitarButton.classList.remove('btn-success');
+                solicitarButton.classList.add('btn-danger');
+                solicitados[id - 1] = true;
+            } else {
+                statusText.textContent = '';
+                solicitarButton.textContent = 'Solicitar';
+                solicitarButton.classList.remove('btn-danger');
+                solicitarButton.classList.add('btn-success');
+                solicitados[id - 1] = false;
+            }
+        }
+    </script>
 </body>
 </html>

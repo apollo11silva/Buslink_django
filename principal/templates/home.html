@@ -83,7 +83,7 @@
             <hr style="border-color: black;"> 
             <ul>
                 {% for favorito in favoritos %}
-                    <li><img src="{% static 'icones\icone_bus.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ favorito.nome }} </li>
+                    <li><img src="{% static 'icones\favorito_rodoviaria.png' %}" alt="Ícone de ônibus" class="bus-icon">{{ favorito.nome }} </li>
                 {% endfor %}
             </ul>
         </div>
@@ -97,6 +97,14 @@
                     <strong>Paradas Solicitadas</strong><br>
                 </p>
             </div>
+            <hr style="border-color: black;"> 
+
+            <div class="container">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+
         </div>
     </div>
     
